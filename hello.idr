@@ -14,11 +14,6 @@ nats = [0..]
 nums : List Integer
 nums = take 10 nats
 
--- Apparently it is also total (and consiquently not turing complete)
--- So this will not compile
--- infinity : Integer
--- infinity = last nats
-
 -- map works on all functors, there is no fmap!
 justTwo : Maybe Integer
 justTwo = map succ $ Just 1
