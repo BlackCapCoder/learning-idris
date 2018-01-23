@@ -1,2 +1,5 @@
-.*.idr@neomake*
-*.ibc
+*
+
+!.gitignore
+!*.idr
+!*.md

@@ -24,7 +24,7 @@ mutual
     | _ = let m' = evalProgram m p
           in if cursor m' == 0
                 then m'
-                else evalOp m' (Loop p)
+                else evalOp m' (Loop p) -- This is the offending line!
 
   partial
   evalProgram : Memory -> Program -> Memory
@@ -39,6 +39,7 @@ num n = replicate n Inc
 mult : Program -> Op
 mult p = Loop $ Dec :: Right :: p ++ [Left]
 
+-- 65, or an uppercase A
 testProg : Program
 testProg = concat
   [ num 10
