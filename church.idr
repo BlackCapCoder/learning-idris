@@ -61,7 +61,8 @@ toInt : Nat' -> Integer
 toInt Z' = 0
 toInt (S' x) = 1 + toInt x
 
--- Not sure how to tell idris that x>=0
--- fact' : (x : Integer) -> Integer
+-- Not sure why this doesn't compile
+-- fact' : (x : Integer) -> {auto p : x >= 0 = True} -> Integer
 -- fact' 0 = 1
 -- fact' n = n * fact' (n-1)
+
