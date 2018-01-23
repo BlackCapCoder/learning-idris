@@ -5,7 +5,7 @@ main = do
   putStrLn "Hello world"
 
   -- There is no mapM
-  -- I also cannot use `nums ` that is defined below, as in C
+  -- I also cannot use `nums` defined below, as in C
   sequence_ $ print <$> [1..10]
 
 -- Idris is not lazy by default, but can still have lazy data structures
@@ -24,4 +24,10 @@ nums = take 10 nats
 justTwo : Maybe Integer
 justTwo = map succ $ Just 1
 
+-- List comprihensions work
+compr : List Integer
+compr = [ x*2 | x <- [1..10], x > 5 ]
 
+-- And they generalize for monads, nice!
+compr' : Maybe ()
+compr' = [ x | x <- Nothing ]
